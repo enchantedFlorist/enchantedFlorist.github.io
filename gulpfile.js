@@ -24,7 +24,9 @@ const merge = require('merge-stream');
 let env;
 
 const clean = function CLEAN(done) {
-  rimraf('dist', done);
+  rimraf('dist', function() {
+    rimraf('temp', done);
+  });
 };
 
 const pages = function PAGES() {
