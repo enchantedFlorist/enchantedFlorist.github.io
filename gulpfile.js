@@ -3,7 +3,6 @@ const panini = require('panini');
 const rimraf = require('rimraf');
 const browser = require('browser-sync');
 const plumber = require('gulp-plumber');
-const watch = require("gulp-watch");
 const sourcemaps = require("gulp-sourcemaps");
 const sass = require("gulp-sass");
 const source = require("vinyl-source-stream");
@@ -17,7 +16,6 @@ const watchify = require('watchify');
 const babelify = require('babelify');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
-const copy = require('gulp-copy');
 const gulpIf = require('gulp-if');
 const replace = require('gulp-replace');
 const fs = require('fs');
@@ -26,11 +24,7 @@ const merge = require('merge-stream');
 let env;
 
 const clean = function CLEAN(done) {
-  rimraf('dist', function() {
-    rimraf('temp', function() {
-      done();
-    })
-  });
+  rimraf('dist', done);
 };
 
 const pages = function PAGES() {
@@ -222,7 +216,6 @@ const setEnvDev = function SETENVDEV(done) {
 const watcher = function WATCHER(done) {
   gulp.watch('src/assets/scss/**/*.scss').on('all',gulp.series(styles, browser.reload));
   gulp.watch('src/**/*.html').on('all', gulp.series(resetPages, pages, browser.reload));
-  gulp.watch('src/assets/portfolio/**/*').on('all', gulp.series(copyPortfolioAssets, browser.reload));
   gulp.watch('src/assets/images/**/*').on('all', gulp.series(images, browser.reload));
   scriptsWatch(done); // this calls done so it can generate the script first before the next step
 };
@@ -231,4 +224,4 @@ const watcher = function WATCHER(done) {
 
 gulp.task('dev', gulp.series(setEnvDev, clean, pages, styles, images, copyFavicons, watcher, server));
 
-gulp.task('build', gulp.series(setEnvBuild, clean, styles, pages, images, copyFavicons, scriptsBuild));
+gulp.task('build', gulp.series(setEnvBuild, clean, styles, pages, images, copyFavicons, criticalCSS, scriptsBuild));

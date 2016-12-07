@@ -1,0 +1,41 @@
+.section {
+  padding: 2rem 0;
+  position: relative;
+   &--top {
+     padding: 0;
+     background-image:url('/images/top-section-background@mobile.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+
+     &::before {
+      content:'';
+      display: block;
+      padding-bottom: 130%;
+     }
+   }
+
+   &--contact {
+     background-image:url('/images/contact-background@mobile.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+   }
+
+   &--pink {
+     background: $pink;
+     color: #fff;
+   }
+
+
+
+}
+
+
+.strapline {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+}

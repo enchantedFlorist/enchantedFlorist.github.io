@@ -1,0 +1,116 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+
+body {
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  margin: 0 0 1.5rem;
+  font-weight: 400;
+  @extend %libreB;
+}
+
+p {
+  margin: 0 0 1.5rem;
+  &:last-child {
+    margin: 0;
+  }
+}
+
+
+h1 {
+  font-size: 2.074rem;
+}
+
+h2 {
+  font-size: 1.728rem;
+}
+
+h3 {
+  font-size: 1.44rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+small {
+  font-size: 0.833em;
+}
+
+.wrapper {
+  max-width: 75rem;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+
+a {
+  text-decoration: none;
+  color: $pink;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+
+img {
+  max-width: 100%;
+}
+
+
+button,
+.button {
+  @extend %libreB;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: $pink;
+  color: #fff;
+  border: none;
+
+  &--white {
+    background: #fff;
+    color: $pink;
+  }
+}
+
+
+.text-white {
+  color: #fff !important;
+}
+
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  height: 2.8125rem;
+  line-height: 2.1875rem;
+  padding: 0.3125rem;
+  width: 100%;
+  display: block;
+  border: 1px solid #efefef;
+}
+
+textarea {
+  padding: 0.8rem 0.3125rem;
+  width: 100%;
+  display: block;
+  border: 1px solid #efefef;
+  min-height: 5rem;
+}
+
+
+.form__item--margin {
+  margin-top: 1.5rem;
+}
