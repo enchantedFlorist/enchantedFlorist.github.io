@@ -93,7 +93,9 @@ const styles = function STYLES(done) {
        browsers: ['ie >=9', '> 1%'],
        cascade: false,
      }))
-     .pipe(cssnano())
+     .pipe(cssnano({
+       zindex:false,
+     }))
      .pipe(rename({
        extname: '.min.css'
      }))

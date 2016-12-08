@@ -1,5 +1,6 @@
-export default function GALLERYINIT() {
+export default function GALLERYINIT({open, close, changeImage}) {
   const $gallery = document.querySelector('.gallery');
+  const body = document.body;
   if ($gallery.length === 0) return;
   const Modernizr = window.Modernizr;
   const $item = Array.from($gallery.querySelectorAll('.gallery__item'));
@@ -21,10 +22,28 @@ export default function GALLERYINIT() {
       }
     };
 
+    $el.setAttribute('data-src', src);
+
     img.onload = imgLoad;
     img.src = src;
 
 
   });
+
+
+  const galleryClick = function GALLERYCLICK(e) {
+    const { target } = e;
+    let el = target;
+
+    while (el !== body && !(el.classList.contains('gallery__item'))) {
+      el = el.parentElement;
+    }
+
+    if (el.classList.contains('gallery__item')) {
+      changeImage(el.getAttribute('data-src'));
+    }
+  };
+
+  document.addEventListener('click', galleryClick, false);
 
 };
