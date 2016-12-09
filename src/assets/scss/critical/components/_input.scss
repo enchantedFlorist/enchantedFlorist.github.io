@@ -10,3 +10,9 @@
     cursor: text;
   }
 }
+
+
+.input-viewed:not(:focus):invalid {
+  background-color: #FFD9D9;
+  border-color: #FFD9D9;
+}

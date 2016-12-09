@@ -16,12 +16,13 @@
 
   }
   &__logo {
+    max-width: 100px;
+    display: block;
     span {
       display: block;
       background-image: url('/images/enchanted-florist-logo@mobile.png');
       background-size: cover;
       background-repeat: no-repeat;
-      max-width: 100px;
 
       &::before {
         content:'';
@@ -36,6 +37,8 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+    // z-index: -1;
+    // display: none;
   }
 
   &__trigger {
@@ -45,6 +48,8 @@
     width: 3rem;
     height: 3rem;
     z-index: 2;
+    display: block;
+
 
     span {
       display: block;
@@ -68,6 +73,7 @@
     background: $pink;
     left: 100%;
     z-index: 1;
+    box-shadow: 0 -1px 10px rgba(0,0,0,0.1);
     ul {
       @include ulReset;
     }
@@ -83,12 +89,27 @@
         text-decoration: none;
       }
     }
+
+    &--enchanced {
+      left: auto !important;
+      right: 0;
+      transform: translateX(100%) translateX(10px); // 10px to account for box shadow
+    }
+
+    &--animateable {
+      transition: transform 0.3s ease-in-out;
+    }
   }
 
   &__checkbox {
     &:checked ~ .header__menu {
       left: auto;
       right: 0;
+
+      &--enchanced {
+        right: 0;
+        transform: translateX(0);
+      }
     }
 
     &:checked ~ .header__trigger {

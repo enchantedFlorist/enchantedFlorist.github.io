@@ -33,9 +33,21 @@
     <div class="gallery__item" style="background-color:#c6c8c7;">
       <img data-src="/images/top-section-background@mobile.jpg" class="gallery__item__img"/>
     </div>
+    <div class="gallery__item" style="background-color:#c6c8c7;">
+      <img data-src="/images/top-section-background@mobile.jpg" class="gallery__item__img"/>
+    </div>
+    <div class="gallery__item" style="background-color:#c6c8c7;">
+      <img data-src="/images/top-section-background@mobile.jpg" class="gallery__item__img"/>
+    </div>
+    <div class="gallery__item" style="background-color:#c6c8c7;">
+      <img data-src="/images/top-section-background@mobile.jpg" class="gallery__item__img"/>
+    </div>
+    <div class="gallery__item" style="background-color:#c6c8c7;">
+      <img data-src="/images/top-section-background@mobile.jpg" class="gallery__item__img"/>
+    </div>
   </div>
   <div class="wrapper">
-    <a href="#" class="button button--white">See More</a>
+    <button class="button button--white" id="gallery-see-more" style="display:none;">See More</button>
   </div>
 </section>
 
@@ -46,13 +58,13 @@
       <form class="form" action="/" method="post">
         <div class="form__item">
           <label for="name" class="input">
-            <input type="text" id="name" name="name" autocomplete="name" />
+            <input type="text" id="name" name="name" autocomplete="name" required />
             <span>Name</span>
           </label>
         </div>
         <div class="form__item">
           <label for="email" class="input">
-            <input type="email" id="email" name="email" autocomplete="email" />
+            <input type="email" id="email" name="email" autocomplete="email" required/>
             <span>Email</span>
           </label>
         </div>
@@ -65,7 +77,7 @@
 
         <div class="form__item">
           <label for="message" class="input">
-            <textarea name="message" id="message"></textarea>
+            <textarea name="message" id="message" required></textarea>
             <span>Message</span>
           </label>
         </div>

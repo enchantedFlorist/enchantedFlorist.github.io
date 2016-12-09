@@ -20,5 +20,29 @@
       font-size: 0;
       object-fit: cover;
     }
+
+
+    &:nth-child(n + 5) {
+      display: none;
+    }
+
+    &--hidden {
+      display: none !important;
+    }
+
+    &--block {
+      display: block !important;
+    }
+  }
+}
+
+
+@media screen and (min-width:62.5em) {
+  .gallery {
+    &__item {
+      &:nth-child(n + 5) {
+        display: block;
+      }
+    }
   }
 }
