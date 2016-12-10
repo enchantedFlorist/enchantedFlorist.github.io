@@ -34,6 +34,7 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
-    "fontfaceobserver": "^2.0.7"
+    "fontfaceobserver": "^2.0.7",
+    "promise-polyfill": "^6.0.2"
   }
 }

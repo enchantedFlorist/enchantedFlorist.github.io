@@ -5,10 +5,22 @@
   &__item {
     position: relative;
     width: 50%;
+    cursor: pointer;
+    overflow: hidden;
     &::before {
       content:'';
       display: block;
       padding-bottom: 100%;
+    }
+
+    &__background-image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-size:cover;
+      background-position: 50% 50%;
     }
 
     &__img {
@@ -19,6 +31,7 @@
       left: 0;
       font-size: 0;
       object-fit: cover;
+      min-height: 100%;
     }
 
 
@@ -40,6 +53,7 @@
 @media screen and (min-width:62.5em) {
   .gallery {
     &__item {
+      width: 25%;
       &:nth-child(n + 5) {
         display: block;
       }

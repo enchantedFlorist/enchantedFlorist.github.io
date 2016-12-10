@@ -39,3 +39,53 @@
   color: #fff;
   margin: 0;
 }
+
+
+@media screen and (min-width:43.75em) {
+  .section {
+    &--top {
+      background-image:url('/images/top-section-background.jpg');
+      background-position: center center;
+      &::before {
+        padding-bottom: 70%;
+      }
+      &::after {
+        content:'';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.15);
+      }
+    }
+
+    &--contact {
+      background-image: url('/images/contact-background.jpg');
+    }
+  }
+
+  .strapline {
+    z-index: 1;
+    max-width: 75rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 1rem;
+    bottom: 3rem;
+  }
+}
+
+@media screen and (min-width:62.5em) {
+  .section {
+    padding: 3rem 0;
+    &--top {
+      &::before {
+        height: 43.75rem;
+        padding: 0;
+      }
+    }
+  }
+}
