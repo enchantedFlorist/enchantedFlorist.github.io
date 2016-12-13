@@ -16,7 +16,7 @@ if (Modernizr.flexbox || Modernizr.flexboxlegacy || Modernizr.flexboxtweener) {
 
   formspreeForm({
     form: document.querySelector('.form'),
-    email: 'thisguy+enchantedFlorist@jimmythompson.me',
+    email: 'jenna@enchantedfloristsussex.co.uk',
     isValid: form => form.checkValidity(),
     done: () => {
       controls.changeHTML(`<h2 class='lightbox__title'>Form Sent</h2><p>Thank you for reaching out. I will get back to you as soon as possible.`);
